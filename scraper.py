@@ -63,7 +63,7 @@ def extract_overview_data(driver):
 
     data = {}
     title = soup.find("div",class_="a54c")
-    h1 = title.text.strip()
+    h1 = title.text.strip() if title else None
     data["title"] = h1
     # Updated Date
     updated_div = section.select_one(".f48b div span")
